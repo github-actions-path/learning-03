@@ -1,0 +1,22 @@
+name: first-yaml
+
+on: push
+
+jobs:
+   job1:
+      name: First job
+      runs-on: syr-org-v1
+      steps:
+      - name: Step one
+        uses: actions/checkout@v2
+      - name: Step two
+        run: env | sort
+
+   job2:
+      name: Second job
+      runs-on: windows-latest
+      steps: 
+      - name: Step one
+	uses: actions/checkout@v2
+      - name: Step two
+        run: "Get-ChildItem Env: | Sort-Object Name"
